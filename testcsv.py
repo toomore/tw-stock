@@ -2,8 +2,10 @@
 # -*- coding: utf-8 -*-
 import csv
 import sys
+import urllib2
 
-f = open(sys.argv[1], 'rt')
+#f = open(sys.argv[1], 'rt')
+f = urllib2.urlopen('http://mis.tse.com.tw/data/%s.csv' % '2456')
 
 try:
  reader = csv.reader(f)

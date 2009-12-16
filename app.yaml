@@ -1,0 +1,18 @@
+application: tw-stock
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+
+## cron
+#- url: /crondata
+#  script: crondata.py
+  #secure: always
+#  login: admin
+
+## Main WSGI
+- url: .*
+  script: main.py
+  #secure: always
+  #login: admin
