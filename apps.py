@@ -1,32 +1,59 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-def sread(stock):
-  re = {'name': (stock[-1].decode('big5')).encode('utf-8'),
-        'no': stock[0],
-        'time': stock[2],
-        'top': stock[3],
-        'down': stock[4],
-        'open': stock[5],
-        'h': stock[6],
-        'l': stock[7],
-        'c': stock[8],
-        'value': stock[9],
-        'pvalue': stock[10],
-        'top5buy': {
-                    stock[11]: stock[12],
-                    stock[13]: stock[14],
-                    stock[15]: stock[16],
-                    stock[17]: stock[18],
-                    stock[19]: stock[20]
-                    },
-        'top5sell': {
-                    stock[21]: stock[22],
-                    stock[23]: stock[24],
-                    stock[25]: stock[26],
-                    stock[27]: stock[28],
-                    stock[29]: stock[30]
-                    }
-        }
+import urllib2,csv,random,logging
 
-  return re
+class twsk:
+  def __init__(self,no = None):
+    self.stock = ''
+    if no is None:
+      no = random.randrange(1000,8000)
+
+    ok = 1
+    ok_times = 0
+    while ok:
+      ok = 0
+      try:
+        page = urllib2.urlopen('http://mis.tse.com.tw/data/%s.csv' % no)
+        ok = 0
+      except:
+        no = random.randrange(1000,8000)
+        ok = 1
+        ok_times += 1
+    logging.info('%s: %s' % (ok_times,no))
+
+    reader = csv.reader(page)
+    for i in reader:
+      self.stock = i
+
+  @property
+  def sread(self):
+    re = {'name': (self.stock[-1].decode('big5')).encode('utf-8'),
+          'no': self.stock[0],
+          'range': self.stock[1],
+          'time': self.stock[2],
+          'top': self.stock[3],
+          'down': self.stock[4],
+          'open': self.stock[5],
+          'h': self.stock[6],
+          'l': self.stock[7],
+          'c': self.stock[8],
+          'value': self.stock[9],
+          'pvalue': self.stock[10],
+          'top5buy': {
+                      self.stock[11]: self.stock[12],
+                      self.stock[13]: self.stock[14],
+                      self.stock[15]: self.stock[16],
+                      self.stock[17]: self.stock[18],
+                      self.stock[19]: self.stock[20]
+                      },
+          'top5sell': {
+                      self.stock[21]: self.stock[22],
+                      self.stock[23]: self.stock[24],
+                      self.stock[25]: self.stock[26],
+                      self.stock[27]: self.stock[28],
+                      self.stock[29]: self.stock[30]
+                      }
+          }
+
+    return re
