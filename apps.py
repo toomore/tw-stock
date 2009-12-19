@@ -40,20 +40,21 @@ class twsk:
           'c': self.stock[8],
           'value': self.stock[9],
           'pvalue': self.stock[10],
-          'top5buy': {
-                      self.stock[11]: self.stock[12],
-                      self.stock[13]: self.stock[14],
-                      self.stock[15]: self.stock[16],
-                      self.stock[17]: self.stock[18],
-                      self.stock[19]: self.stock[20]
-                      },
-          'top5sell': {
-                      self.stock[21]: self.stock[22],
-                      self.stock[23]: self.stock[24],
-                      self.stock[25]: self.stock[26],
-                      self.stock[27]: self.stock[28],
-                      self.stock[29]: self.stock[30]
-                      }
+          'top5buy': [
+            (self.stock[11], self.stock[12]),
+            (self.stock[13], self.stock[14]),
+            (self.stock[15], self.stock[16]),
+            (self.stock[17], self.stock[18]),
+            (self.stock[19], self.stock[20])
+            ],
+          'top5sell': [
+            (self.stock[21], self.stock[22]),
+            (self.stock[23], self.stock[24]),
+            (self.stock[25], self.stock[26]),
+            (self.stock[27], self.stock[28]),
+            (self.stock[29], self.stock[30])
+            ]
           }
-
+    re['top5buy'].sort()
+    re['top5sell'].sort()
     return re
