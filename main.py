@@ -23,6 +23,7 @@ class index(webapp.RequestHandler):
   """
   def get(self):
     tv = {'login': str(datetime.datetime.now() + datetime.timedelta(hours=8))[:-7],
+          'test': self.error(404),
           'twse': twsk(self.request.get('q')).sread
         }
     self.response.out.write(template.render('./template/h_index.htm',{'tv':tv}))
