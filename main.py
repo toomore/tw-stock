@@ -4,6 +4,7 @@
 from google.appengine.ext import webapp
 from google.appengine.ext.webapp.util import run_wsgi_app
 from google.appengine.ext.webapp import template
+from google.appengine.api.labs import taskqueue
 
 from apps import twsk
 import datetime
@@ -22,8 +23,11 @@ class index(webapp.RequestHandler):
   """ index page.
   """
   def get(self):
+    if self.request.get('w') is None:
+      dir(taskqueue())
+
     tv = {'login': str(datetime.datetime.now() + datetime.timedelta(hours=8))[:-7],
-          'test': self.error(404),
+          'test': dir(taskqueue),
           'twse': twsk(self.request.get('q')).sread
         }
     self.response.out.write(template.render('./template/h_index.htm',{'tv':tv}))
