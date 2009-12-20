@@ -55,6 +55,11 @@ class twsk:
             (self.stock[29], self.stock[30])
             ]
           }
+    if '-' in self.stock[1]:
+      re['ranges'] = False
+    else:
+      re['ranges'] = True
+
     re['top5buy'].sort()
     re['top5sell'].sort()
     return re

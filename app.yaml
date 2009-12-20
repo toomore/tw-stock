@@ -5,6 +5,13 @@ api_version: 1
 
 handlers:
 
+## CSS
+- url: /css
+  static_dir: static/css
+- url: /css/(.*)
+  static_files: static/css/\1
+  upload: static/css/(.*)
+
 ## cron
 #- url: /crondata
 #  script: crondata.py

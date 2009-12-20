@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>{{ tv.twse.no }} {{ tv.twse.name }} - Taiwan stock Data</title>
+        <meta name="description" content="Taiwan stock data">
+        <meta name="keywords" content="twse,taiwan,stock,Google App Engine"> 
+        <link rel="stylesheet" type="text/css" href="/css/css.css">
+    </head>
+    <body>
+      <div class="cc">
+        <div class="desc"><a href="/">I feel Lucky!</a> {{ tv.menu }}</div>
+        <div class="descr">{{ tv.login }}</div>
+      </div>
+      <div class="cc top"></div>
+      <div align="right"><form method='GET' action='/'><input name='q' size='2' value='{{ tv.twse.no }}'><input type='submit' value='Go'></form></div>
+      <table width="100%">
+        <tr>
+          <td align="center" valign="middle">
+            <div>
+                <div class="rdu ggangel">
+                  <h1>
+                    {{ tv.twse.no }} {{ tv.twse.name }}<br>
+                      {% if tv.twse.ranges %}
+                        <font color="red">
+                      {% else %}
+                        <font color="green">
+                      {% endif %}
+                      {{ tv.twse.c }} ({{ tv.twse.range }})</font>
+                  </h1>
+                </div>
+                <div class="rdu ggangel">
+                  <table class="rdu">
+                    <tr align="center">
+                      <td></td>
+                      <td>現價</td>
+                      <td>開盤</td>
+                      <td>成交量</td>
+                    </tr>
+                    <tr align="center">
+                      <td>{{ tv.twse.time }}</td>
+                      <td>{% if tv.twse.ranges %}
+                            <font color="red">
+                          {% else %}
+                            <font color="green">
+                          {% endif %}
+                          {{ tv.twse.c }}({{ tv.twse.range }})</font></td>
+                      <td>{{ tv.twse.open }}</td>
+                      <td>{{ tv.twse.value }}</td>
+                    </tr>
+                  </table>
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <div class="descr">Taiwan stock data. 2010</div>
+    </body>
+</html>
