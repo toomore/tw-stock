@@ -63,3 +63,15 @@ class twsk:
     re['top5buy'].sort()
     re['top5sell'].sort()
     return re
+
+class twsew:
+  def __init__(self):
+    self.weight = {}
+    page = urllib2.urlopen('http://mis.tse.com.tw/data/TSEIndex.csv?r=%s' % random.randrange(1,10000))
+    reader = csv.reader(page)
+    for i in reader:
+      if '-' in i[3]:
+        ud = False
+      else:
+        ud = True
+      self.weight[i[0]] = {'no':i[0], 'time':i[1], 'value':i[2], 'range':i[3], 'ud': ud}

@@ -1,0 +1,176 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>Taiwan stock Data</title>
+        <meta name="description" content="Taiwan stock data">
+        <meta name="keywords" content="twse,taiwan,stock,Google App Engine"> 
+        <link rel="stylesheet" type="text/css" href="/css/css.css">
+    </head>
+    <body>
+      <div class="cc">
+        <div class="desc">{% include 'menu.htm' %} {{ tv.menu }}</div>
+        <div class="descr">{{ tv.login }}</div>
+      </div>
+      <div class="cc top"></div>
+      <div align="right"><form method='GET' action='/'><input name='q' size='2' value='{{ tv.twse.no }}'><input type='submit' value='Go'></form></div>
+      <table width="100%">
+        <tr>
+          <td align="center" valign="middle">
+            <div>
+                <div class="rdu ggangel">
+                  <h1>{{ tv.test.0.time }}</h1>
+                </div>
+                <div class="rdu ggangel">
+                  <table class="weight">
+                    <tr>
+                      <td>發行量加權股價指數</td><td>{{ tv.test.1.value|floatformat:2 }}</td><td class="{% if tv.test.1.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.1.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>未含金融保險股指數</td><td>{{ tv.test.2.value|floatformat:2 }}</td><td class="{% if tv.test.2.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.2.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>未含電子股指數</td><td>{{ tv.test.3.value|floatformat:2 }}</td><td class="{% if tv.test.3.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.3.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>未含金融電子股指數</td><td>{{ tv.test.34.value|floatformat:2 }}</td><td class="{% if tv.test.34.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.34.range }}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="rdu ggangel">
+                  類股
+                </div>
+                <div class="rdu ggangel">
+                  <table class="weight">
+                    <tr>
+                      <td>化學類指數</td><td>{{ tv.test.4.value|floatformat:2 }}</td><td class="{% if tv.test.4.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.4.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>生技醫療類指數</td><td>{{ tv.test.5.value|floatformat:2 }}</td><td class="{% if tv.test.5.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.5.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>水泥窯製類指數</td><td>{{ tv.test.6.value|floatformat:2 }}</td><td class="{% if tv.test.6.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.6.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>食品類指數</td><td>{{ tv.test.7.value|floatformat:2 }}</td><td class="{% if tv.test.7.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.7.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>塑膠化工類指數</td><td>{{ tv.test.8.value|floatformat:2 }}</td><td class="{% if tv.test.8.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.8.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>紡織纖維類指數</td><td>{{ tv.test.9.value|floatformat:2 }}</td><td class="{% if tv.test.9.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.9.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>機電類指數</td><td>{{ tv.test.10.value|floatformat:2 }}</td><td class="{% if tv.test.10.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.10.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>造紙類指數</td><td>{{ tv.test.11.value|floatformat:2 }}</td><td class="{% if tv.test.11.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.11.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>建材營造類指數</td><td>{{ tv.test.12.value|floatformat:2 }}</td><td class="{% if tv.test.12.ud %}fred{% else %}fgreen{% endif %}">{{ tv.test.12.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>金融保險類指數</td><td>{{ tv.test.14.value|floatformat:2 }}</td><td>{{ tv.test.14.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>汽車類指數</td><td>{{ tv.test.15.value|floatformat:2 }}</td><td>{{ tv.test.15.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>塑膠類指數</td><td>{{ tv.test.17.value|floatformat:2 }}</td><td>{{ tv.test.17.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>電機機械類指數</td><td>{{ tv.test.19.value|floatformat:2 }}</td><td>{{ tv.test.19.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>電器電纜類指數</td><td>{{ tv.test.20.value|floatformat:2 }}</td><td>{{ tv.test.20.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>化學生技醫療類指數</td><td>{{ tv.test.21.value|floatformat:2 }}</td><td>{{ tv.test.21.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>玻璃陶瓷類指數</td><td>{{ tv.test.22.value|floatformat:2 }}</td><td>{{ tv.test.22.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>鋼鐵類指數</td><td>{{ tv.test.24.value|floatformat:2 }}</td><td>{{ tv.test.24.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>橡膠類指數</td><td>{{ tv.test.25.value|floatformat:2 }}</td><td>{{ tv.test.25.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>汽車類指數</td><td>{{ tv.test.26.value|floatformat:2 }}</td><td>{{ tv.test.26.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>電子類指數</td><td>{{ tv.test.27.value|floatformat:2 }}</td><td>{{ tv.test.27.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>航運類指數</td><td>{{ tv.test.29.value|floatformat:2 }}</td><td>{{ tv.test.29.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>觀光類指數</td><td>{{ tv.test.30.value|floatformat:2 }}</td><td>{{ tv.test.30.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>貿易百貨類指數</td><td>{{ tv.test.32.value|floatformat:2 }}</td><td>{{ tv.test.32.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>其他類指數</td><td>{{ tv.test.33.value|floatformat:2 }}</td><td>{{ tv.test.33.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>油電燃氣類指數</td><td>{{ tv.test.35.value|floatformat:2 }}</td><td>{{ tv.test.35.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>半導體類指數</td><td>{{ tv.test.36.value|floatformat:2 }}</td><td>{{ tv.test.36.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>電腦及週邊設備類指數</td><td>{{ tv.test.37.value|floatformat:2 }}</td><td>{{ tv.test.37.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>光電類指數</td><td>{{ tv.test.38.value|floatformat:2 }}</td><td>{{ tv.test.38.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>通信網路類指數</td><td>{{ tv.test.39.value|floatformat:2 }}</td><td>{{ tv.test.39.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>電子零組件類指數</td><td>{{ tv.test.40.value|floatformat:2 }}</td><td>{{ tv.test.40.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>電子通路類指數</td><td>{{ tv.test.41.value|floatformat:2 }}</td><td>{{ tv.test.41.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>資訊服務類指數</td><td>{{ tv.test.42.value|floatformat:2 }}</td><td>{{ tv.test.42.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>其他電子類指數</td><td>{{ tv.test.43.value|floatformat:2 }}</td><td>{{ tv.test.43.range }}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="rdu ggangel">
+                  臺灣50指數
+                </div>
+                <div class="rdu ggangel">
+                  <table class="weight">
+                    <tr>
+                      <td>臺灣50指數</td><td>{{ tv.test.50.value|floatformat:2 }}</td><td>{{ tv.test.50.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>臺灣中型100指數</td><td>{{ tv.test.51.value|floatformat:2 }}</td><td>{{ tv.test.51.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>臺灣資訊科技指數</td><td>{{ tv.test.52.value|floatformat:2 }}</td><td>{{ tv.test.52.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>臺灣發達指數</td><td>{{ tv.test.53.value|floatformat:2 }}</td><td>{{ tv.test.53.range }}</td>
+                    </tr>
+                    <tr>
+                      <td>臺灣高股息指數</td><td>{{ tv.test.54.value|floatformat:2 }}</td><td>{{ tv.test.54.range }}</td>
+                    </tr>
+                  </table>
+                </div>
+                <div class="rdu ggangel">
+                  { tv.test }
+                </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+      {% include 'h_desc.htm' %}
+    </body>
+</html>

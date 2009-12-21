@@ -82,9 +82,13 @@ input{
         background:#eeeeff;
         padding:14px;
         margin:14px;}
-.mailbox td{
-        padding:14px;
-        margin:14px;}
+
+.weight td{
+        font-size:10pt;
+        padding: 5px;
+        margin: 5px;
+        text-align:right;}
+
 .frommaster {
         background:#ccddcc;}
 .tomaster {
@@ -97,3 +101,7 @@ input{
         color:white;
         background:red;
         font-weight: bold;}
+.fred {
+        color:red;}
+.fgreen {
+        color:green;}
