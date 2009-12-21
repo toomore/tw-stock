@@ -14,7 +14,7 @@ class twsk:
     while ok:
       ok = 0
       try:
-        page = urllib2.urlopen('http://mis.tse.com.tw/data/%s.csv' % no)
+        page = urllib2.urlopen('http://mis.tse.com.tw/data/%s.csv?r=%s' % (no,random.randrange(1,10000)))
         ok = 0
       except:
         no = random.randrange(1000,8000)
