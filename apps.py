@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+# http://chart.apis.google.com/chart?chs=20x50&cht=lc&chd=t1:0,0,0|0,55,0|0,50,0|0,40,0|0,35,0&chds=35,55&chm=F,,1,1:4,20
 import urllib2,csv,random,logging
 
 class twsk:
@@ -60,6 +60,8 @@ class twsk:
     else:
       re['ranges'] = True
 
+    re['crosspic'] = "http://chart.apis.google.com/chart?chs=20x40&cht=lc&chd=t1:0,0,0|0,%s,0|0,%s,0|0,%s,0|0,%s,0&chds=%s,%s&chm=F,,1,1:4,20" % (re['h'],re['c'],re['open'],re['l'],re['l'],re['h'])
+
     re['top5buy'].sort()
     re['top5sell'].sort()
     return re
@@ -75,3 +77,6 @@ class twsew:
       else:
         ud = True
       self.weight[i[0]] = {'no':i[0], 'time':i[1], 'value':i[2], 'range':i[3], 'ud': ud}
+
+    self.weight['200']['v2'] = int(self.weight['200']['value'].replace(',','')) / 100000000
+

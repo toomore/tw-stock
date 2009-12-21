@@ -31,7 +31,7 @@ class index(webapp.RequestHandler):
 class weightpage(webapp.RequestHandler):
   def get(self):
     tv = {'login': str(datetime.datetime.now() + datetime.timedelta(hours=8))[:-7],
-          'test': twsew().weight,
+          'twsew': twsew().weight,
         }
     self.response.out.write(template.render('./template/h_weight.htm',{'tv':tv}))
 

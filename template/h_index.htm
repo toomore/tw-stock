@@ -20,6 +20,7 @@
                 <div class="rdu ggangel">
                   <h1>
                     {{ tv.twse.no }} {{ tv.twse.name }}<br>
+                    <img align="center" src="{{ tv.twse.crosspic }}"><br>
                       {% if tv.twse.ranges %}
                         <font color="red">
                       {% else %}
@@ -33,8 +34,11 @@
                     <tr align="center">
                       <td></td>
                       <td>現價</td>
-                      <td>開盤</td>
                       <td>成交量</td>
+                      <td>開盤</td>
+                      <td>最高價</td>
+                      <td>最低價</td>
+                      <td></td>
                     </tr>
                     <tr align="center">
                       <td>{{ tv.twse.time }}</td>
@@ -43,9 +47,12 @@
                           {% else %}
                             <font color="green">
                           {% endif %}
-                          {{ tv.twse.c }}({{ tv.twse.range }})</font></td>
-                      <td>{{ tv.twse.open }}</td>
+                          {{ tv.twse.c }} ({{ tv.twse.range }})</font></td>
                       <td>{{ tv.twse.value }}</td>
+                      <td>{{ tv.twse.open }}</td>
+                      <td>{{ tv.twse.h }}</td>
+                      <td>{{ tv.twse.l }}</td>
+                      <td><img src="{{ tv.twse.crosspic }}"></td>
                     </tr>
                   </table>
                 </div>
