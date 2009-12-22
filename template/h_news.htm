@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>Taiwan stock Data</title>
+        <meta name="description" content="Taiwan stock data">
+        <meta name="keywords" content="twse,taiwan,stock,Google App Engine"> 
+        <link rel="stylesheet" type="text/css" href="/css/css.css">
+    </head>
+    <body>
+      <div class="cc">
+        <div class="desc">{% include 'menu.htm' %} {{ tv.menu }}</div>
+        <div class="descr">{{ tv.login }}</div>
+      </div>
+      <div class="cc top"></div>
+      <div align="right">
+        <form method='GET' action='/'>
+          <input name='q' size='2' value='{{ tv.twse.no }}'>
+          <input type='submit' value='Go'>
+        </form>
+      </div>
+      <div align="center" width="100%">
+        <form action="/news" id="cse-search-box">
+          <input type="hidden" name="cx" value="009900412648408179576:ng49ar6eur8" />
+          <input type="hidden" name="cof" value="FORID:10" />
+          <input type="hidden" name="ie" value="UTF-8" />
+          <input type="text" name="q" size="10" vlaue="{{ tv.q }}"/>
+          <input type="submit" name="sa" value="搜尋" />
+        </form>
+      </div>
+      <div align="center" width="100%">
+        <div width="100%" id="cse-search-results"></div>
+          <script type="text/javascript">
+            var googleSearchIframeName = "cse-search-results";
+            var googleSearchFormName = "cse-search-box";
+            var googleSearchFrameWidth = 600;
+            var googleSearchDomain = "www.google.com";
+            var googleSearchPath = "/cse";
+          </script>
+          <script type="text/javascript" src="http://www.google.com/afsonline/show_afs_search.js"></script>
+      </div>
+      {% include 'h_desc.htm' %}
+    </body>
+</html>

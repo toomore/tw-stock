@@ -35,11 +35,19 @@ class weightpage(webapp.RequestHandler):
         }
     self.response.out.write(template.render('./template/h_weight.htm',{'tv':tv}))
 
+class news(webapp.RequestHandler):
+  def get(self):
+    tv = {'login': str(datetime.datetime.now() + datetime.timedelta(hours=8))[:-7],
+          'q': self.request.get('q')
+        }
+    self.response.out.write(template.render('./template/h_news.htm',{'tv':tv}))
+
 def main():
   """ Start up. """
   application = webapp.WSGIApplication([
                                         ('/', index),
-                                        ('/weight', weightpage)
+                                        ('/weight', weightpage),
+                                        ('/news', news)
                                       ],debug=True)
   run_wsgi_app(application)
 
