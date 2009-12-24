@@ -76,9 +76,10 @@ class twsew:
   def __init__(self):
     self.weight = {}
     page = urlfetch.fetch('http://mis.tse.com.tw/data/TSEIndex.csv?r=%s' % random.randrange(1,10000))
-    reader = csv.reader(page.content)
+    reader = csv.reader((page.content).split('\r\n'))
+
     for i in reader:
-      if not len(i):
+      if len(i):
         if '-' in i[3]:
           ud = False
         else:

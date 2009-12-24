@@ -12,32 +12,35 @@
         <div class="descr">{{ tv.login }}</div>
       </div>
       <div class="cc top"></div>
+      <div align="right"><form method='GET' action='/'><input name='q' size='2' value='{{ tv.twse.no }}'><input type='submit' value='Go'></form></div>
       <div align="center" width="100%">
-        {{ tv.classname }}
-        <table class="rdu">
-          <tr>
-            <td></td>
-            <td></td>
-            <td>開盤價</td>
-            <td>最高</td>
-            <td>最低</td>
-            <td>收盤價</td>
-            <td>成交量</td>
-            <td>漲跌</td>
-          </tr>
-          {% for i in tv.e %}
-          <tr>
-            <td><a href="/?q={{ i.no }}">{{ i.no }}</a></td>
-            <td><a href="/?q={{ i.no }}">{{ i.name }}</a></td>
-            <td align="right">{{ i.open|floatformat:2 }}</td>
-            <td align="right">{{ i.h|floatformat:2 }}</td>
-            <td align="right">{{ i.l|floatformat:2 }}</td>
-            <td align="right">{{ i.c|floatformat:2 }}</td>
-            <td align="right">{{ i.value }}</td>
-            <td align="right"><font color="{% if i.ranges %}red">{% else %}green">{% endif %}{{ i.range|floatformat:2 }}</font></td>
-          </tr>
-          {% endfor %}
-        </table>
+        <div class="rdu ggangel">
+          {{ tv.classname }}
+          <table class="rdu">
+            <tr>
+              <td></td>
+              <td></td>
+              <td>開盤價</td>
+              <td>最高</td>
+              <td>最低</td>
+              <td>收盤價</td>
+              <td>成交量</td>
+              <td>漲跌</td>
+            </tr>
+            {% for i in tv.e %}
+            <tr>
+              <td><a href="/?q={{ i.no }}">{{ i.no }}</a></td>
+              <td><a href="/?q={{ i.no }}">{{ i.name }}</a></td>
+              <td align="right">{{ i.open|floatformat:2 }}</td>
+              <td align="right">{{ i.h|floatformat:2 }}</td>
+              <td align="right">{{ i.l|floatformat:2 }}</td>
+              <td align="right">{{ i.c|floatformat:2 }}</td>
+              <td align="right">{{ i.value }}</td>
+              <td align="right"><font color="{% if i.ranges %}red">{% else %}green">{% endif %}{{ i.range|floatformat:2 }}</font></td>
+            </tr>
+            {% endfor %}
+          </table>
+        </div>
       </div>
       {% include 'h_desc.htm' %}
     </body>

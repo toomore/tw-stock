@@ -12,10 +12,13 @@
         <div class="descr">{{ tv.login }}</div>
       </div>
       <div class="cc top"></div>
-      <div align="center" width="100%">
-        {% for i in tv.q %}
-            <a href="/TseList/{{ i.no }}">{{ i.name }}</a>　
-        {% endfor %}
+      <div align="right"><form method='GET' action='/'><input name='q' size='2' value='{{ tv.twse.no }}'><input type='submit' value='Go'></form></div>
+      <div align="center">
+        <div class="rdu ggangel">
+          {% for i in tv.q %}
+              <a href="/TseList/{{ i.no }}">{{ i.name }}</a>　
+          {% endfor %}
+        </div>
       </div>
       {% include 'h_desc.htm' %}
     </body>

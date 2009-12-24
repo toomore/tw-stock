@@ -26,7 +26,6 @@ class index(webapp.RequestHandler):
   """
   def get(self):
     tv = {'login': str(datetime.datetime.now() + datetime.timedelta(hours=8))[:-7],
-          'test': twsew().weight,
           'twse': twsk(self.request.get('q')).sread
         }
     self.response.out.write(template.render('./template/h_index.htm',{'tv':tv}))
@@ -81,7 +80,9 @@ class TseListPage(webapp.RequestHandler):
         e.append(twsk(i[0]).sread)
     '''
     page = urlfetch.fetch('http://mis.tse.com.tw/data/TC%s.csv?r=%s' % (twseno,random.randrange(1,10000)))
+    #reader = csv.reader((page.content).split('\r\n'))
     reader = csv.reader(page.content)
+
     e = []
     logging.info('s: %s, c:%s' % (page.status_code,page.headers))
 
