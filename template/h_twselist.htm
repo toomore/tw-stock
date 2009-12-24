@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>Taiwan stock Data</title>
+        <meta name="description" content="Taiwan stock data">
+        <meta name="keywords" content="twse,taiwan,stock,Google App Engine"> 
+        <link rel="stylesheet" type="text/css" href="/css/css.css">
+    </head>
+    <body>
+      <div class="cc">
+        <div class="desc">{% include 'menu.htm' %} {{ tv.menu }}</div>
+        <div class="descr">{{ tv.login }}</div>
+      </div>
+      <div class="cc top"></div>
+      <div align="center" width="100%">
+        {% for i in tv.q %}
+            <a href="/TseList/{{ i.no }}">{{ i.name }}</a>　
+        {% endfor %}
+      </div>
+      {% include 'h_desc.htm' %}
+    </body>
+</html>
