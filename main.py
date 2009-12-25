@@ -10,6 +10,7 @@ from google.appengine.api import urlfetch
 from apps import twsk,twsew,tsealllists
 from datamodel import TSEList
 import datetime,csv,urllib2,random,logging
+import headerapp
 
 #page = urllib2.urlopen('http://mis.tse.com.tw/data/TSEIndex.csv')
 #page = response.read()
@@ -25,10 +26,12 @@ class index(webapp.RequestHandler):
   """ index page.
   """
   def get(self):
-    tv = {'login': str(datetime.datetime.now() + datetime.timedelta(hours=8))[:-7],
-          'twse': twsk(self.request.get('q')).sread
-        }
-    self.response.out.write(template.render('./template/h_index.htm',{'tv':tv}))
+    vv = {
+      'twse': twsk(self.request.get('q')).sread
+    }
+    a = headerapp.Renderer()
+    a.render(self,'./template/htm_index.htm',vv)
+    #self.response.out.write(template.render('./template/htm_index.htm',{'tv':tv}))
 
 class weightpage(webapp.RequestHandler):
   def get(self):

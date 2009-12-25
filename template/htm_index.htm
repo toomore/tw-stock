@@ -1,0 +1,51 @@
+{% extends "base_temp.htm" %}
+
+{% block title %}{{ twse.no }} {{ twse.name }}{% endblock %}
+
+{% block content %}
+<div>
+    <div class="rdu ggangel">
+      <h1>
+        {{ twse.no }} {{ twse.name }}<br>
+        <img align="center" src="{{ twse.crosspic }}"><br>
+          {% if twse.ranges %}
+            <font color="red">
+          {% else %}
+            <font color="green">
+          {% endif %}
+          {{ twse.c }} ({{ twse.range }})</font>
+      </h1>
+    </div>
+    <div class="rdu ggangel">
+      <table class="rdu">
+        <tr align="center">
+          <td></td>
+          <td>現價</td>
+          <td>成交量</td>
+          <td>開盤</td>
+          <td>最高價</td>
+          <td>最低價</td>
+          <td></td>
+        </tr>
+        <tr align="center">
+          <td>{{ twse.time }}</td>
+          <td>{% if twse.ranges %}
+                <font color="red">
+              {% else %}
+                <font color="green">
+              {% endif %}
+              {{ twse.c }} ({{ twse.range }})</font></td>
+          <td>{{ twse.value }}</td>
+          <td>{{ twse.open }}</td>
+          <td>{{ twse.h }}</td>
+          <td>{{ twse.l }}</td>
+          <td><img src="{{ twse.crosspic }}"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="rdu ggangel">
+      搜尋<a href="/news?q={{ twse.no }} {{ twse.name }}&cx=009900412648408179576:ng49ar6eur8&cof=FORID:10&ie=UTF-8&twseno={{ twse.no }}">關於 {{ twse.name }} 的新聞</a>
+    </div>
+</div>
+{% endblock %}
+

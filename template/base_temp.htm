@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <title>{% block title %}{% endblock %} - Taiwan stock Data</title>
+        <meta name="description" content="Taiwan stock data">
+        <meta name="keywords" content="twse,taiwan,stock,Google App Engine"> 
+        <link rel="stylesheet" type="text/css" href="/css/css.css">
+    </head>
+    <body>
+      <div class="cc">
+        <div class="desc">{% include 'menu.htm' %} {{ menu }}</div>
+        <div class="descr">{{ login }}</div>
+      </div>
+      <div class="cc top"></div>
+      <div align="right"><form method='GET' action='/'><input name='q' size='2' value='{{ twse.no }}'><input type='submit' value='Go'></form></div>
+      <table width="100%">
+        <tr>
+          <td align="center" valign="middle">
+            <div>
+              {% block content %}{% endblock %}
+            </div>
+          </td>
+        </tr>
+      </table>
+      {% include 'h_desc.htm' %}
+    </body>
+</html>
