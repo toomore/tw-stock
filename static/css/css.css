@@ -24,7 +24,11 @@ input{
         font-size:10pt;
         color:#778899;}
 .rdu {
-        font-size:10pt;}
+        font-size:10pt;
+        -moz-border-radius: 10px;
+        -webkit-border-top-left-radius: 10px;
+        -webkit-border-top-right-radius: 10px;
+        border-radius: 10px;}
 .rdu a {
         color:#5060ef;
         text-decoration: none;}
@@ -78,6 +82,7 @@ input{
 .foot {clear:both;}
 .cc {clear:both;}
 .mailbox,.ggangel{
+        width:700;
         font-size:10pt;
         background:#eeeeff;
         padding:14px;
