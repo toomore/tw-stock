@@ -35,18 +35,23 @@ class index(webapp.RequestHandler):
 
 class weightpage(webapp.RequestHandler):
   def get(self):
-    tv = {'login': str(datetime.datetime.now() + datetime.timedelta(hours=8))[:-7],
-          'twsew': twsew().weight,
-        }
-    self.response.out.write(template.render('./template/h_weight.htm',{'tv':tv}))
+    vv = {
+      'twsew': twsew().weight,
+    }
+    a = headerapp.Renderer()
+    a.render(self,'./template/htm_weight.htm',vv)
+
+    #self.response.out.write(template.render('./template/h_weight.htm',{'tv':tv}))
 
 class news(webapp.RequestHandler):
   def get(self):
-    tv = {'login': str(datetime.datetime.now() + datetime.timedelta(hours=8))[:-7],
-          'q': self.request.get('q'),
-          'twseno': self.request.get('twseno')
-        }
-    self.response.out.write(template.render('./template/h_news.htm',{'tv':tv}))
+    vv = {
+      'q': self.request.get('q'),
+      'twse': {'no': self.request.get('twseno')}
+    }
+    a = headerapp.Renderer()
+    a.render(self,'./template/htm_news.htm',vv)
+    #self.response.out.write(template.render('./template/h_news.htm',{'tv':tv}))
 
 class TseAllList(webapp.RequestHandler):
   def get(self):

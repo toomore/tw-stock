@@ -1,0 +1,155 @@
+{% extends "base_temp.htm" %}
+
+{% block title %}加權股價指數{% endblock %}
+
+{% block content %}
+<div>
+    <div class="rdu ggangel">
+      {{ twsew.0.time }} {{ twsew.1.time }}
+      <h1>加權股價指數</h1>
+      <h1>{{ twsew.1.value|floatformat:2 }} <font class="{% if twsew.1.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.1.range }}</h1></font>
+      成交金額： {{ twsew.200.v2 }} 億元
+    </div>
+    <div class="rdu ggangel">
+      <table class="weight">
+        <tr>
+          <td>未含金融保險股指數</td><td>{{ twsew.2.value|floatformat:2 }}</td><td class="{% if twsew.2.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.2.range }}</td>
+        </tr>
+        <tr>
+          <td>未含電子股指數</td><td>{{ twsew.3.value|floatformat:2 }}</td><td class="{% if twsew.3.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.3.range }}</td>
+        </tr>
+        <tr>
+          <td>未含金融電子股指數</td><td>{{ twsew.34.value|floatformat:2 }}</td><td class="{% if twsew.34.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.34.range }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="rdu ggangel">
+      <h1>臺灣50指數</h1>
+    </div>
+    <div class="rdu ggangel">
+      <table class="weight">
+        <tr>
+          <td>臺灣50指數</td><td>{{ twsew.50.value|floatformat:2 }}</td><td class="{% if twsew.50.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.50.range }}</td>
+        </tr>
+        <tr>
+          <td>臺灣中型100指數</td><td>{{ twsew.51.value|floatformat:2 }}</td><td class="{% if twsew.51.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.51.range }}</td>
+        </tr>
+        <tr>
+          <td>臺灣資訊科技指數</td><td>{{ twsew.52.value|floatformat:2 }}</td><td class="{% if twsew.52.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.52.range }}</td>
+        </tr>
+        <tr>
+          <td>臺灣發達指數</td><td>{{ twsew.53.value|floatformat:2 }}</td><td class="{% if twsew.53.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.53.range }}</td>
+        </tr>
+        <tr>
+          <td>臺灣高股息指數</td><td>{{ twsew.54.value|floatformat:2 }}</td><td class="{% if twsew.54.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.54.range }}</td>
+        </tr>
+      </table>
+    </div>
+    <div class="rdu ggangel">
+      <h1>類股</h1>
+    </div>
+    <div class="rdu ggangel">
+      <table class="weight">
+        <tr>
+          <td>化學類指數</td><td>{{ twsew.4.value|floatformat:2 }}</td><td class="{% if twsew.4.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.4.range }}</td>
+        </tr>
+        <tr>
+          <td>生技醫療類指數</td><td>{{ twsew.5.value|floatformat:2 }}</td><td class="{% if twsew.5.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.5.range }}</td>
+        </tr>
+        <tr>
+          <td>水泥窯製類指數</td><td>{{ twsew.6.value|floatformat:2 }}</td><td class="{% if twsew.6.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.6.range }}</td>
+        </tr>
+        <tr>
+          <td>食品類指數</td><td>{{ twsew.7.value|floatformat:2 }}</td><td class="{% if twsew.7.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.7.range }}</td>
+        </tr>
+        <tr>
+          <td>塑膠化工類指數</td><td>{{ twsew.8.value|floatformat:2 }}</td><td class="{% if twsew.8.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.8.range }}</td>
+        </tr>
+        <tr>
+          <td>紡織纖維類指數</td><td>{{ twsew.9.value|floatformat:2 }}</td><td class="{% if twsew.9.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.9.range }}</td>
+        </tr>
+        <tr>
+          <td>機電類指數</td><td>{{ twsew.10.value|floatformat:2 }}</td><td class="{% if twsew.10.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.10.range }}</td>
+        </tr>
+        <tr>
+          <td>造紙類指數</td><td>{{ twsew.11.value|floatformat:2 }}</td><td class="{% if twsew.11.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.11.range }}</td>
+        </tr>
+        <tr>
+          <td>建材營造類指數</td><td>{{ twsew.12.value|floatformat:2 }}</td><td class="{% if twsew.12.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.12.range }}</td>
+        </tr>
+        <tr>
+          <td>金融保險類指數</td><td>{{ twsew.14.value|floatformat:2 }}</td><td class="{% if twsew.14.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.14.range }}</td>
+        </tr>
+        <tr>
+          <td>汽車類指數</td><td>{{ twsew.15.value|floatformat:2 }}</td><td class="{% if twsew.15.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.15.range }}</td>
+        </tr>
+        <tr>
+          <td>塑膠類指數</td><td>{{ twsew.17.value|floatformat:2 }}</td><td class="{% if twsew.17.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.17.range }}</td>
+        </tr>
+        <tr>
+          <td>電機機械類指數</td><td>{{ twsew.19.value|floatformat:2 }}</td><td class="{% if twsew.19.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.19.range }}</td>
+        </tr>
+        <tr>
+          <td>電器電纜類指數</td><td>{{ twsew.20.value|floatformat:2 }}</td><td class="{% if twsew.20.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.20.range }}</td>
+        </tr>
+        <tr>
+          <td>化學生技醫療類指數</td><td>{{ twsew.21.value|floatformat:2 }}</td><td class="{% if twsew.21.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.21.range }}</td>
+        </tr>
+        <tr>
+          <td>玻璃陶瓷類指數</td><td>{{ twsew.22.value|floatformat:2 }}</td><td class="{% if twsew.22.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.22.range }}</td>
+        </tr>
+        <tr>
+          <td>鋼鐵類指數</td><td>{{ twsew.24.value|floatformat:2 }}</td><td class="{% if twsew.24.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.24.range }}</td>
+        </tr>
+        <tr>
+          <td>橡膠類指數</td><td>{{ twsew.25.value|floatformat:2 }}</td><td class="{% if twsew.25.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.25.range }}</td>
+        </tr>
+        <tr>
+          <td>汽車類指數</td><td>{{ twsew.26.value|floatformat:2 }}</td><td class="{% if twsew.26.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.26.range }}</td>
+        </tr>
+        <tr>
+          <td>電子類指數</td><td>{{ twsew.27.value|floatformat:2 }}</td><td class="{% if twsew.27.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.27.range }}</td>
+        </tr>
+        <tr>
+          <td>航運類指數</td><td>{{ twsew.29.value|floatformat:2 }}</td><td class="{% if twsew.29.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.29.range }}</td>
+        </tr>
+        <tr>
+          <td>觀光類指數</td><td>{{ twsew.30.value|floatformat:2 }}</td><td class="{% if twsew.30.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.30.range }}</td>
+        </tr>
+        <tr>
+          <td>貿易百貨類指數</td><td>{{ twsew.32.value|floatformat:2 }}</td><td class="{% if twsew.32.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.32.range }}</td>
+        </tr>
+        <tr>
+          <td>其他類指數</td><td>{{ twsew.33.value|floatformat:2 }}</td><td class="{% if twsew.33.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.33.range }}</td>
+        </tr>
+        <tr>
+          <td>油電燃氣類指數</td><td>{{ twsew.35.value|floatformat:2 }}</td><td class="{% if twsew.35.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.35.range }}</td>
+        </tr>
+        <tr>
+          <td>半導體類指數</td><td>{{ twsew.36.value|floatformat:2 }}</td><td class="{% if twsew.36.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.36.range }}</td>
+        </tr>
+        <tr>
+          <td>電腦及週邊設備類指數</td><td>{{ twsew.37.value|floatformat:2 }}</td><td class="{% if twsew.37.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.37.range }}</td>
+        </tr>
+        <tr>
+          <td>光電類指數</td><td>{{ twsew.38.value|floatformat:2 }}</td><td class="{% if twsew.38.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.38.range }}</td>
+        </tr>
+        <tr>
+          <td>通信網路類指數</td><td>{{ twsew.39.value|floatformat:2 }}</td><td class="{% if twsew.39.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.39.range }}</td>
+        </tr>
+        <tr>
+          <td>電子零組件類指數</td><td>{{ twsew.40.value|floatformat:2 }}</td><td class="{% if twsew.40.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.40.range }}</td>
+        </tr>
+        <tr>
+          <td>電子通路類指數</td><td>{{ twsew.41.value|floatformat:2 }}</td><td class="{% if twsew.41.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.41.range }}</td>
+        </tr>
+        <tr>
+          <td>資訊服務類指數</td><td>{{ twsew.42.value|floatformat:2 }}</td><td class="{% if twsew.42.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.42.range }}</td>
+        </tr>
+        <tr>
+          <td>其他電子類指數</td><td>{{ twsew.43.value|floatformat:2 }}</td><td class="{% if twsew.43.ud %}fred{% else %}fgreen{% endif %}">{{ twsew.43.range }}</td>
+        </tr>
+      </table>
+    </div>
+</div>
+{% endblock %}
