@@ -34,3 +34,4 @@ reader = csv.reader(page.content)
 for s in reader:
   if len(s):
     TSEStocks(key_name = s[0], TSELRef = b).put()
+    logging.info('Add data: %s-%s' % (a,s[0]))
