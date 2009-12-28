@@ -1,0 +1,4 @@
+cron:
+- description: Read stocks
+  url: /readstocks
+  schedule: every 5 minutes

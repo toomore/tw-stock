@@ -101,7 +101,9 @@ class TseListPage(webapp.RequestHandler):
         for i in reader:
           if len(i):
             e.append(twsk(i[0]).sread)
+
         classname = memcache.get(twseno,'classname')
+
         if classname is None:
           classname = TSEList().get_by_key_name(twseno).name
           memcache.add(twseno,classname,60*3,namespace = 'classname')

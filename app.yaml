@@ -18,10 +18,9 @@ handlers:
   upload: static/css/(.*)
 
 ## cron
-#- url: /crondata
-#  script: crondata.py
-  #secure: always
-#  login: admin
+- url: /readstocks
+  script: readstocks.py
+  login: admin
 
 ## Main WSGI
 - url: .*
