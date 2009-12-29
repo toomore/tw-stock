@@ -1,4 +1,8 @@
 cron:
-- description: Read stocks
-  url: /readstocks
-  schedule: every 5 minutes
+#- description: Read stocks
+#  url: /readstocks
+#  schedule: every 5 minutes
+
+- description: Read stock name
+  url: /readstockinfo
+  schedule: every 2 minutes

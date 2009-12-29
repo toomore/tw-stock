@@ -22,6 +22,10 @@ handlers:
   script: readstocks.py
   login: admin
 
+- url: /readstockinfo
+  script: readstockinfo.py
+  login: admin
+
 ## Main WSGI
 - url: .*
   script: main.py

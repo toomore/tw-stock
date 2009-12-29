@@ -28,6 +28,8 @@ class twsk:
 
     logging.info('%s: %s' % (ok_times,no))
 
+    self.oktimes = ok_times
+
     reader = csv.reader(page)
     for i in reader:
       self.stock = i
