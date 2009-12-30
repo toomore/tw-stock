@@ -16,3 +16,5 @@ for i in a:
     data.name = name
     data.put()
     logging.info('Add stock name: %s %s' % (i.key().id_or_name(),name))
+  else:
+    logging.info('Wrong stock info: %s' % i.key().id_or_name())
