@@ -12,9 +12,10 @@ for i in a:
   tk = twsk(i.key().id_or_name())
   if tk.oktimes == 0:
     name = tk.sread['name']
-    data = TSEStocks.get_by_key_name(i.key().id_or_name())
-    data.name = name
-    data.put()
+    #data = TSEStocks.get_by_key_name(i.key().id_or_name())
+    i.name = name
+    i.put()
     logging.info('Add stock name: %s %s' % (i.key().id_or_name(),name))
   else:
     logging.info('Wrong stock info: %s' % i.key().id_or_name())
+    i.delete()
